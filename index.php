@@ -1,5 +1,5 @@
 <?php
-session_start();
+include "servicos/servicoMensagemSessao.php";
 ?>
 
 
@@ -19,13 +19,13 @@ session_start();
 
 		<form action="script.php" method="post">
 			<?php
-				$mensagemDeErro = isset($_SESSION['mensagem-de-erro']) ? $_SESSION['mensagem-de-erro'] : '';   //Se um valor no array de SESSION de nome 'mensagem-de-erro' está ativo, atribui esse valor à variavel, se não, atribui ''(espaço vazio)  .
+				$mensagemDeErro = obterMensagemErro(); 
 				
 				if(!empty($mensagemDeErro)){// se a variavel $mensagemDeErro não estiver 'vazia', então executa o comando (contendo a string definida em script.php)
 					echo $mensagemDeErro;
 				}
 
-				$mensagemDeSucesso = isset($_SESSION['mensagem-de-sucesso']) ? $_SESSION['mensagem-de-sucesso'] : '';//Se um valor no array de SESSION de nome 'mensagem-de-sucesso' está ativo, atribui esse valor à variavel, se não, atribui ''(espaço vazio)  .
+				$mensagemDeSucesso = obterMensagemSucesso(); '';//Se um valor no array de SESSION de nome 'mensagem-de-sucesso' está ativo, atribui esse valor à variavel, se não, atribui ''(espaço vazio)  .
 				
 				if(!empty($mensagemDeSucesso)){ //se a variavel$mensagemDeSucesso não estiver 'vazia', então executa o comando (contendo a string definida em script.php)
 					echo $mensagemDeSucesso;
