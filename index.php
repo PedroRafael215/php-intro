@@ -21,13 +21,13 @@ include "servicos/servicoMensagemSessao.php";
 			<?php
 				$mensagemDeErro = obterMensagemErro(); 
 				
-				if(!empty($mensagemDeErro)){// se a variavel $mensagemDeErro não estiver 'vazia', então executa o comando (contendo a string definida em script.php)
+				if(!empty($mensagemDeErro)){// se a variavel $mensagemDeErro não estiver 'vazia', então executa o comando 
 					echo $mensagemDeErro;
 				}
 
 				$mensagemDeSucesso = obterMensagemSucesso(); '';//Se um valor no array de SESSION de nome 'mensagem-de-sucesso' está ativo, atribui esse valor à variavel, se não, atribui ''(espaço vazio)  .
 				
-				if(!empty($mensagemDeSucesso)){ //se a variavel$mensagemDeSucesso não estiver 'vazia', então executa o comando (contendo a string definida em script.php)
+				if(!empty($mensagemDeSucesso)){ //se a variavel$mensagemDeSucesso não estiver 'vazia', então executa o comando
 					echo $mensagemDeSucesso;
 				}
 
